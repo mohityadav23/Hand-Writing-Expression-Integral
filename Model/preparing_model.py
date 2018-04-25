@@ -59,9 +59,10 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 
 hist = model.fit(X_train, y_train, epochs = 25, shuffle=True, batch_size = 80, validation_data = (X_val, y_val))
 
-model_json = model.to_json()
-with open("model.json", "w") as json_file:
-    json_file.write(model_json)
-model.save_weights("model.h5")
+#model_json = model.to_json()
+#with open("model.json", "w") as json_file:
+#    json_file.write(model_json)
+#model.save_weights("model.h5")
+model.save("model_all.h5")
 
 print("Saved model to disk")
